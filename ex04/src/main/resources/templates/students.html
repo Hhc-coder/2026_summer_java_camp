@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html th=xmlns:"http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>학생 목록 시스템</title>
+  <style>
+    body { font-family: Arial, sans-serif;margin: 30px; }
+    h2 { color: #333; }
+    table { border-collapse: collapse; width: 80%; margin-top: 15px; }
+    th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+    th { background-color: #4CAF50; color: white; }
+    tr:nth-child(even) { background-color: #f2f2f2; }
+  </style>
+</head>
+<body>
+<h1 th:text="${hi}"></h1>
+<h2>🎓 Cloudtype DB 학생 목록 View</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>이름</th>
+        <th>나이</th>
+        <th>이메일</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr each="student : ${students}">
+          <td th:text="${student.id}">1</td>
+          <td th:text="${student.name}">홍길동</td>
+          <td th:text="${student.age}">20</td>
+          <td th:text="${student.email}">test@example.com</td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>
